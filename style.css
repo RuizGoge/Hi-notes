@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,600;0,700;1,400&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* background-image: url("/images/montana3.jpg"); */
+    background: #8e2de2;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8e2de2, #4a00e0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+}
+
+.circle1,
+.circle2 {
+    background: white;
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.circle1 {
+    top: 16%;
+    right: 13%;
+}
+
+.circle2 {
+    left: 10%;
+    bottom: 25%;
+}
+
+.first-container {
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    padding: 0px 40px 0px 40px;
+    border-radius: 10px;
+    z-index: 2;
+    backdrop-filter: blur(1rem);
+}
+
+h1 {
+    color: #1b1f20;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.input-field.input-container {
+    float: none;
+    display: flex;
+}
+
+.input-field>#search {
+    margin-top: 25px;
+}
+
+.input-container i {
+    margin-top: 41px;
+    margin-right: 8px;
+}
+
+#label-save-notes {
+    font-family: 'Raleway', sans-serif;
+    color: rgb(7, 6, 6);
+    opacity: 0.7;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#textarea1:focus {
+    font-family: 'Raleway', sans-serif;
+    color: rgb(42, 40, 40);
+    border-bottom: #1b1f20;
+}
+
+#title:focus {
+    font-family: 'Raleway', sans-serif;
+    color: rgb(42, 40, 40);
+    border-bottom: #1b1f20;
+}
+
+#title:focus+label {
+    color: rgb(42, 40, 40);
+    font-weight: bold;
+}
+
+#textarea1:focus+label {
+    color: rgb(42, 40, 40);
+    font-weight: bold;
+}
+
+#textarea1:valid {
+    font-family: 'Raleway', sans-serif;
+    color: rgba(42, 40, 40, 0.87);
+}
+
+#title:valid {
+    font-family: 'Raleway', sans-serif;
+    color: rgba(42, 40, 40, 0.87);
+}
+
+
+/* Carousel */
+
+.carousel {
+    height: 300px !important;
+}
+
+
+/* //contenedor de tarjeta */
+
+.card-rousel {
+    color: rgb(3, 3, 3);
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px 20px 15px 15px;
+    font-family: 'Raleway', sans-serif;
+    overflow-wrap: break-word;
+}
+
+.card-rousel i {
+    font-size: 12px;
+    color: rgb(3, 3, 3);
+}
+
+.container-note-in-card {
+    height: 120px;
+    overflow-y: hidden;
+    text-align: justify;
+}
+
+.container-date-in-card {
+    display: flex;
+    justify-content: center;
+}
+
+.show-container {
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient( to right bottom, rgba(7, 6, 6, 0.123), rgba(12, 12, 12, 0.3));
+    z-index: 1;
+    backdrop-filter: blur(0.5rem);
+    display: flex;
+    position: fixed;
+    transition-duration: 0.4s;
+    transition-delay: 0.3s;
+}
+
+.show {
+    transition-duration: 1s;
+    min-height: 60vh;
+    width: 60%;
+    background: linear-gradient( to right bottom, rgba(17, 16, 16, 0.897), rgba(14, 13, 13, 0.719));
+    z-index: 2;
+    backdrop-filter: blur(1rem);
+    border-radius: 20px;
+    display: flex;
+    position: fixed;
+    top: 20%;
+    right: 20%;
+    bottom: 20%;
+    left: 20%;
+}
+
+.btn-success,
+.btn-danger {
+    background-color: slateblue !important;
+    width: 30%;
+}
+
+.swal2-actions {
+    display: flex;
+    justify-content: space-evenly !important;
+}
+
+#exit-show {
+    width: 20px;
+    height: 25px;
+    border: 0;
+    color: #b9acb9;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#exit-show:hover {
+    color: #f8f0f8e3;
+}
+
+#number-note {
+    display: none;
+}
+
+.container-title-in-show,
+.container-note-in-show {
+    word-break: break-all;
+}
+
+.container-note-in-show h2 {
+    margin: 0;
+}
+
+.container-note-in-show {
+    width: 100%;
+    height: 200px;
+    overflow-y: scroll;
+    padding-bottom: 20px;
+    border-bottom-style: groove;
+}
+
+
+/* SCROLL OF SHOW-CONTAINER */
+
+.container-note-in-show::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    /* display: none; */
+}
+
+.container-note-in-show::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.container-note-in-show::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}
+
+.container-note-in-show::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+
+.container-note-in-show::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 4px;
+}
+
+.container-note-in-show::-webkit-scrollbar-track:hover,
+.container-note-in-show::-webkit-scrollbar-track:active {
+    background: transparent;
+}
+
+.container-btn-in-show {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10px;
+}
+
+
+/* UPDATE AND HIDDEN CARDS */
+
+.hidden {
+    display: none;
+}
+
+.textarea-update {
+    height: 200px !important;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+}
+
+
+/* button play */
+
+.btn-floating {
+    background-image: linear-gradient(to right, #232526 0%, #414345 51%, #232526 100%)
+}
+
+.btn-floating {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    font-size: 18px !important;
+}
+
+.btn-floating:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-floating i {
+    font-size: 18px !important;
+}
+
+
+/* pop-ups */
+
+.swal2-popup {
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.918), rgba(255, 255, 255, 0.664)) !important;
+}
