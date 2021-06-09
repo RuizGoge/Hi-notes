@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>🦔</title>
+    <title>Music Player</title>
 </head>
 
 
@@ -18,14 +18,14 @@
         <div class="row">
             <div class="col s12">
                 <div class="container-title">
-                    <h1 id="principal_title" class="center">Hi notes!🦔</h1>
+                    <h1 class="title center">Hi notes!🦔</h1>
                 </div>
             </div>
         </div>
     </header>
     <main>
         <section>
-            <div id="first-container" class="container first-container scale-transition scale-out z-depth-2">
+            <div class="container first-container hoverable z-depth-2">
                 <div class="row">
                     <div class="col s12">
                         <div class="input-field">
@@ -38,15 +38,34 @@
                             <textarea maxlength="880" id="textarea1" class="materialize-textarea"></textarea>
                             <label id="label-save-notes" for="textarea1">Hi note</label>
                         </div>
+                        <div class="row buttons-container">
+                            <div class="col s6 center">
+                                <a id="save" class="waves-effect waves-light btn-floating lighten-1 z-depth-5"><i class="material-icons">sd_storage</i></a>
+                            </div>
+                            <div class="col s6 center">
+                                <a id="reset" class="waves-effect waves-light btn-floating lighten-1 z-depth-5"><i class="material-icons">delete_forever</i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- <section>
+            <div class="section valign-wrapper">
+                <div class="row">
+                    <div class="col s12 input-field input-container">
+                        <i class="material-icons">search</i>
+                        <input id="search" type="text" placeholder="Buscar">
+                    </div>
+                </div>
+            </div>
+        </section> -->
     </main>
     <div class="section">
         <div class="container">
-            <div class="row card-container container-note-in-show" id="carousel">
-               <!-- Aqui van las cards insertadas con javascript  -->
+            <div id="carousel">
+
             </div>
         </div>
     </div>
@@ -85,21 +104,15 @@
     </div>
     <div class="circle1"></div>
     <div class="circle2"></div>
-   
-<!-- fixed buttos -->
+    <div class="fixed-action-btn">
 
-<div class="fixed-action-btn">
-    <a id="add-note" class="btn-floating btn-large">
-      <i id="icon-add" class="large material-icons">add</i>
-    </a>
-    <ul>
-      <li><a id="save" class="btn-floating"><i   class="material-icons">check</i></a></li>
-      <li><a id="list-btn" class="btn-floating"><i id="icon-grid" class="material-icons">view_module</i></a></li>
-      <li><a id="prueba" class="btn-floating"><i class="material-icons">format_quote</i></a></li>
-      <li><a id="reset" class="btn-floating"><i class="material-icons">delete_forever</i></a></li>
-    </ul>
-  </div>
-        
+        <audio src="music/Summer.mp3" id="audio"></audio>
+        <div id="music-container">
+            <a class="btn-floating waves-effect waves-blue" id="play">
+                <i id="button-music" class="fas fa-play"></i>
+            </a>
+        </div>
+    </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
