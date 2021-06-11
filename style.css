@@ -335,6 +335,7 @@ h1:hover {
   border-radius: 3px;
   margin-top: 10px;
   z-index: 2;
+  backdrop-filter: blur(1rem);
   transition-duration: 0.5s;
 }
 
