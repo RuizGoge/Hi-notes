@@ -18,13 +18,13 @@
         <div class="row">
             <div class="col s12">
                 <div class="container-title">
-                    <h1 id="principal_title" class="center">Hi notes!🦔</h1>
+                    <h1 id="add-note" class="center principal_title without-nothing">Hi notes!🦔</h1>
                 </div>
             </div>
         </div>
     </header>
     <main>
-        <section>
+        <section class="section-container">
             <div id="first-container" class="container first-container scale-transition scale-out z-depth-2">
                 <div class="row">
                     <div class="col s12">
@@ -43,7 +43,7 @@
             </div>
         </section>
     </main>
-    <div class="section">
+    <div class="section section-container">
         <div class="container">
             <div class="row card-container container-note-in-show" id="carousel">
                <!-- Aqui van las cards insertadas con javascript  -->
@@ -88,12 +88,12 @@
    
 <!-- fixed buttos -->
 
-<div class="fixed-action-btn">
-    <a id="add-note" class="btn-floating btn-large">
-      <i id="icon-add" class="large material-icons">add</i>
+<div class="fixed-action-btn btn-fixed direction-top ">
+    <a id="btn-to-pulse" class="btn-floating btn-large">
+      <i id="save" class="large material-icons icon-add">add</i>
     </a>
     <ul>
-      <li><a id="save" class="btn-floating"><i   class="material-icons">check</i></a></li>
+      <li><a class="btn-floating"><i   class="material-icons">check</i></a></li>
       <li><a id="list-btn" class="btn-floating"><i id="icon-grid" class="material-icons">view_module</i></a></li>
       <li><a id="prueba" class="btn-floating"><i class="material-icons">format_quote</i></a></li>
       <li><a id="reset" class="btn-floating"><i class="material-icons">delete_forever</i></a></li>

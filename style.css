@@ -35,13 +35,13 @@ body {
 }
 
 .circle1 {
-  top: 16%;
+  top: 50%;
   right: 13%;
 }
 
 .circle2 {
   left: 10%;
-  bottom: 25%;
+  bottom: 10%;
 }
 
 .first-container {
@@ -61,7 +61,7 @@ body {
 }
 
 h1 {
-  color: #1b1f20;
+  color: #1b1f20a6;
   font-family: "Dancing Script", cursive;
   font-weight: bolder;
   -moz-user-select: none;
@@ -69,6 +69,10 @@ h1 {
   -ms-user-select: none;
   user-select: none;
   transition-duration: 0.5s;
+}
+h1:hover {
+  color: #1b1f20;
+
 }
 
 .without-first_container {
@@ -196,6 +200,10 @@ h1 {
   display: none;
 }
 
+.section-container{
+  backdrop-filter: blur(0.5rem);
+}
+
 .container-title-in-show,
 .container-note-in-show {
   word-break: break-all;
@@ -211,7 +219,7 @@ h1 {
   overflow-y: scroll;
   padding-bottom: 20px;
   border-bottom-style: groove;
-}
+  }
 
 /* SCROLL OF SHOW-CONTAINER */
 
@@ -360,3 +368,4 @@ h1 {
 .green {
   transition-duration: 1s;
 }
+

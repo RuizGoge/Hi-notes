@@ -5,9 +5,10 @@ const deleteNote = document.querySelector("#delete");
 const updateNote = document.querySelector("#update");
 const newNote = document.querySelector("#save");
 const firstContainer = document.querySelector("#first-container");
-const iconAdd = document.querySelector("#icon-add");
+const iconAdd = document.querySelector(".icon-add");
 const addNewNote = document.querySelector("#add-note");
-const principalTitle = document.querySelector("#principal_title");
+const principalTitle = document.querySelector(".principal_title");
+const btnToPulse = document.querySelector("#btn-to-pulse");
 
 let resultDate;
 let notes = [];
@@ -50,13 +51,26 @@ const saveNote = () => {
   const TITLE_NOTE = document.getElementById("title").value;
   const NOTE = document.getElementById("textarea1").value;
   if (!(TITLE_NOTE && NOTE)) {
-    M.toast({ html: "Write in the two fields", classes: "rounded" });
-    newNote.classList.remove("blue");
-    newNote.classList.add("red", "lighten-2");
+    if (firstContainer.classList.contains("first-container_fixed")) {
+      M.toast({ html: "Click in Hi-Notes!", classes: "rounded" });
+    } else {
+      M.toast({ html: "Write in the two fields", classes: "rounded" });
+      btnToPulse.classList.remove("blue");
+      btnToPulse.classList.add("red");
+    }
   } else {
     dateOfNotes();
     notes.push({ date: resultDate, title: TITLE_NOTE, note: NOTE });
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Saved",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    setTimeout(() => {
     save(notes);
+    }, 1500);
   }
 };
 const showNotes = () => {
@@ -145,42 +159,17 @@ function cards() {
   });
 }
 
+//prueba del toggle en show
+
 const prueba = document.querySelector("#prueba");
 
-prueba.addEventListener('click', function () {
-  show.classList.toggle("scale-out");
-  divShow.classList.toggle("show-container")
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+prueba.addEventListener("click", function () {
+  if (show.classList.toggle("scale-out")) {
+    setTimeout(() => {
+      divShow.classList.toggle("hidden");
+    }, 500);
+  }
+});
 
 function deleteOne() {
   const NUM_NOTE = document.querySelector("#number-note").innerHTML;
@@ -233,8 +222,8 @@ function updateOne() {
   const TITLE_NOTE = document.querySelector(
     "#title-in-show-container"
   ).innerHTML;
-  const BTN_UPDATE = (document.querySelector("#update").innerHTML =
-    '<a class="btn transparent z-depth-0 save-note white-text">SAVE</a>');
+  document.querySelector("#update").innerHTML =
+    '<a class="btn transparent z-depth-0 save-note white-text">SAVE</a>';
   const NOTE = document.querySelector("#note-in-show-container");
   const textOfNote = NOTE.innerHTML;
   const textArea = document.querySelector("#textarea-update");
@@ -315,20 +304,17 @@ newNote.addEventListener("click", saveNote);
 showNotes();
 cards();
 
-
-
 firstContainer.classList.add("first-container_fixed");
 principalTitle.classList.add("without-first_container");
-newNote.classList.add("disabled");
 
 addNewNote.addEventListener("click", function () {
   iconAdd.innerHTML = "check";
-  newNote.classList.add("pulse", "blue");
+  btnToPulse.classList.add("pulse", "blue");
   firstContainer.classList.toggle("scale-out");
-  newNote.classList.remove("disabled");
+  btnToPulse.classList.remove("disabled");
   firstContainer.classList.remove("first-container_fixed");
   principalTitle.classList.remove("without-first_container");
-  
+
   if ((iconAdd.innerHTML = "check")) {
     if (firstContainer.classList.contains("scale-out")) {
       iconAdd.innerHTML = "add";
@@ -336,10 +322,7 @@ addNewNote.addEventListener("click", function () {
         firstContainer.classList.add("first-container_fixed");
       }, 100);
       principalTitle.classList.add("without-first_container");
-      newNote.classList.remove("pulse");
-      newNote.classList.add("disabled");
+      btnToPulse.classList.remove("pulse");
     }
   }
 });
-
-
