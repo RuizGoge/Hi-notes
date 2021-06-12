@@ -69,7 +69,7 @@ const saveNote = () => {
       timer: 1500,
     });
     setTimeout(() => {
-    save(notes);
+      save(notes);
     }, 1500);
   }
 };
@@ -91,18 +91,22 @@ const showNotes = () => {
         `<div id="list-container" class="col s10 offset-s1 card-container_note z-depth-3 card-${
           i + 1
         }">
-                <div class="row card-note">
-                    <div class="col s12">
-                        <div class="left-align">
-                            <div>
-                                <h6 class="truncate">${e.title}</h6>
-                                <p class="truncate red-text">${e.note}</p>
-                                <p class="date">${e.date}</p>
-                            </div>  
-                        </div>
-                    </div>
-                </div>
-            </div>`
+      <div class="row card-note">
+          <div class="col s12 container-content_card">
+              <div class="content-card">
+                  <div class="truncate">
+                      <h6>${e.title}</h6>
+                      <p>${e.note}</p>
+                      <p class="date">${e.date}</p>
+                  </div> 
+                  <div class="icons-options">
+                      <i class="material-icons tiny">edit</i>
+                      <i class="material-icons tiny">delete</i>
+                  </div> 
+              </div>
+          </div>
+      </div>
+  </div>`
       );
       const listContainer = document.getElementById("list-container");
       const toggleList = document.querySelector("#list-btn");
@@ -308,14 +312,14 @@ firstContainer.classList.add("first-container_fixed");
 principalTitle.classList.add("without-first_container");
 
 addNewNote.addEventListener("click", function () {
-  iconAdd.innerHTML = "check";
+  iconAdd.innerHTML = "save";
   btnToPulse.classList.add("pulse", "blue");
   firstContainer.classList.toggle("scale-out");
   btnToPulse.classList.remove("disabled");
   firstContainer.classList.remove("first-container_fixed");
   principalTitle.classList.remove("without-first_container");
 
-  if ((iconAdd.innerHTML = "check")) {
+  if ((iconAdd.innerHTML = "save")) {
     if (firstContainer.classList.contains("scale-out")) {
       iconAdd.innerHTML = "add";
       setTimeout(() => {

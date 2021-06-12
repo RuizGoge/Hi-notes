@@ -344,7 +344,7 @@ h1:hover {
 }
 .card-note {
   margin-bottom: 0px !important;
-  margin-top: 10px;
+  padding: 2px;
 }
 .card-note p {
   margin: 0px !important;
@@ -365,3 +365,22 @@ h1:hover {
   transition-duration: 1s;
 }
 
+/* icons options   */
+
+.content-card{
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons-options{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2px;
+  transition-duration: 0.4s;
+  opacity: 0;
+}
+
+.content-card:hover .icons-options{
+  opacity: 0.8;
+}
