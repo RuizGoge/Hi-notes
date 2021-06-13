@@ -18,6 +18,8 @@ const divShow = document.querySelector("#show-container");
 const show = document.querySelector("#show");
 const exitShow = document.querySelector("#exit-show");
 
+// inicializador del sidenav
+
 const dateOfNotes = () => {
   const MONTHS = [
     "January",
@@ -97,11 +99,10 @@ const showNotes = () => {
                   <div class="truncate">
                       <h6>${e.title}</h6>
                       <p>${e.note}</p>
-                      <p class="date">${e.date}</p>
+                      <i class="date">${e.date}</i>
                   </div> 
                   <div class="icons-options">
-                      <i class="material-icons tiny">edit</i>
-                      <i class="material-icons tiny">delete</i>
+                      <i id="prueba" class="material-icons tiny">open_in_new</i>
                   </div> 
               </div>
           </div>
@@ -114,7 +115,7 @@ const showNotes = () => {
       toggleList.addEventListener("click", function () {
         listContainer.classList.toggle("s10");
         listContainer.classList.toggle("s3");
-        iconGrid.innerHTML = "view_list";
+        iconGrid.innerHTML = "view_module";
         if (
           !(
             listContainer.classList.contains("s10") ||
@@ -124,7 +125,7 @@ const showNotes = () => {
           listContainer.classList.add("grid_mode");
         } else {
           listContainer.classList.remove("grid_mode");
-          iconGrid.innerHTML = "view_module";
+          iconGrid.innerHTML = "view_headline";
         }
       });
     });
@@ -133,6 +134,7 @@ const showNotes = () => {
     show.classList.remove("show");
   }
 };
+
 //funciones interactivas
 
 function cards() {
@@ -145,7 +147,7 @@ function cards() {
     const card = document.querySelector(`.card-${i + 1}`);
     card.addEventListener("click", function () {
       show.classList.remove("scale-out");
-      show.classList.add("show");
+      // show.classList.add("show");
       divShow.classList.remove("hidden");
       divShow.classList.add("show-container");
       TITLE_SHOW.innerHTML = e.title;
@@ -162,18 +164,6 @@ function cards() {
     }, 350);
   });
 }
-
-//prueba del toggle en show
-
-const prueba = document.querySelector("#prueba");
-
-prueba.addEventListener("click", function () {
-  if (show.classList.toggle("scale-out")) {
-    setTimeout(() => {
-      divShow.classList.toggle("hidden");
-    }, 500);
-  }
-});
 
 function deleteOne() {
   const NUM_NOTE = document.querySelector("#number-note").innerHTML;
@@ -300,6 +290,9 @@ resetButton.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".fixed-action-btn");
   var instances = M.FloatingActionButton.init(elems);
+
+  var elems = document.querySelectorAll(".sidenav");
+  var instances = M.Sidenav.init(elems);
 });
 
 deleteNote.addEventListener("click", deleteOne);

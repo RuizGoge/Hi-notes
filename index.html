@@ -9,24 +9,70 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>🦔</title>
+    <title>Notes</title>
 </head>
-
-
 <body>
     <header>
-        <div class="row">
-            <div class="col s12">
-                <div class="container-title">
-                    <h1 id="add-note" class="center principal_title without-nothing">Hi notes!🦔</h1>
-                </div>
+        <nav class="black">
+            <div class=".show-on-medium-and-up nav-wrapper container">
+                <a href="#" class="sidenav-trigger" data-target="menu-side">
+                    <i class="material-icons">menu</i>
+                </a>
+                <a href="#" class="brand-logo right">
+                    🧦
+                </a>
             </div>
+        </nav>
+        <div class="container section">
+            
+            <ul class="sidenav" id="menu-side">
+                <li>
+                    <div class="user-view ">
+                        <div class="background">
+                            <img src="/img/fondo.png" alt="">
+                        </div>
+                        <a>
+                            <img src="/img/flor.gif" alt="" class="circle side-nav_container cencer">
+                        </a>
+                        <a href="#">
+                            <span class="name black-text">Hi-Notes</span>
+                        </a>
+                        <p href="">
+                            <span class="email black-text">Ésta es una pagina sencilla de notas donde el almacenamiento será en tu mismo navegador con ayuda del LocalStorage.</span>
+                            <span class="email black-text">
+                                Haz click, en el titulo principal para agregar tu primera nota.
+                            </span>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://github.com/RuizGoge/Hi-notes" target="_blank">
+                        <i class="material-icons">cloud</i>
+                        Git repository
+                    </a>
+                </li>
+                <li>
+                    <a class="export-pdf">
+                        <i class="material-icons">picture_as_pdf</i>
+                        Export to pdf (to do 🤣)
+                    </a>
+                </li>
+            </ul>
         </div>
     </header>
+
+
+    <div class="row">
+        <div class="col s12">
+            <div class="container-title">
+                <h1 id="add-note" class="center principal_title without-nothing">Hi notes!</h1>
+            </div>
+        </div>
+    </div>
     <main>
         <section class="section-container">
             <div id="first-container" class="container first-container scale-transition scale-out z-depth-2">
-                <div class="row">
+                <div class="row first-container_inputs">
                     <div class="col s12">
                         <div class="input-field">
                             <input maxlength="20" id="title" type="text" class="validate">
@@ -74,7 +120,7 @@
                                     <div id="update" class="btn indigo lighten-3 waves-effect waves-yellow">Update</div>
                                 </div>
                                 <div class="col s12 m6 l6">
-                                    <div id="delete" class="btn indigo lighten-3 waves-effect waves-yellow">Delete</div>
+                                    <div id="delete" class="delete btn indigo lighten-3 waves-effect waves-yellow">Delete</div>
                                 </div>
                             </div>
                         </div>
@@ -88,18 +134,17 @@
    
 <!-- fixed buttos -->
 
-<div class="fixed-action-btn btn-fixed direction-left ">
+<div class="fixed-action-btn btn-fixed">
     <a id="btn-to-pulse" class="btn-floating btn-large">
       <i id="save" class="large material-icons icon-add">add</i>
     </a>
     <ul>
       <li><a class="btn-floating"><i   class="material-icons">check</i></a></li>
-      <li><a id="list-btn" class="btn-floating"><i id="icon-grid" class="material-icons">view_module</i></a></li>
-      <li><a id="prueba" class="btn-floating"><i class="material-icons">format_quote</i></a></li>
+      <li><a id="list-btn" class="btn-floating"><i id="icon-grid" class="material-icons">view_headline</i></a></li>
+      <li><a class="btn-floating"><i class="material-icons">format_quote</i></a></li>
       <li><a id="reset" class="btn-floating"><i class="material-icons">delete_forever</i></a></li>
     </ul>
   </div>
-        
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

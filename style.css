@@ -9,9 +9,9 @@ body {
   /* background-image: url("/images/montana3.jpg"); */
   background: #8e2de2;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #8e2de2, #4a00e0);
+  background: -webkit-linear-gradient(to right, rgba(212,227,236), rgb(161, 210, 240));
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  background: linear-gradient(to right, rgba(212,227,236), rgba(212,227,236));
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,34 +44,40 @@ body {
   bottom: 10%;
 }
 
+.side-nav_container{
+  width: 250px !important; 
+  height: 200px !important;
+}
+
 .first-container {
+  width: 55% !important;
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),
     rgba(255, 255, 255, 0.3)
   );
-  padding: 0px 40px 0px 40px;
+  padding: 15px;
   border-radius: 10px;
   z-index: 2;
   font-size: 14px;
 }
+
 .first-container_fixed {
   position: fixed;
 }
 
 h1 {
-  color: #1b1f20a6;
   font-family: "Dancing Script", cursive;
   font-weight: bolder;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
   transition-duration: 0.5s;
 }
 h1:hover {
   color: #1b1f20;
-
 }
 
 .without-first_container {
@@ -87,10 +93,6 @@ h1:hover {
   display: flex;
 }
 
-.input-field > #search {
-  margin-top: 25px;
-}
-
 .input-container i {
   margin-top: 41px;
   margin-right: 8px;
@@ -100,19 +102,22 @@ h1:hover {
   font-family: "Raleway", sans-serif;
   color: rgb(7, 6, 6);
   opacity: 0.7;
-  font-weight: bold;
+  font-size: 14px;
+  /* font-weight: bold; */
 }
 
 #textarea1:focus {
   font-family: "Raleway", sans-serif;
   color: rgb(42, 40, 40);
   border-bottom: #1b1f20;
+  font-size: 14px;
 }
 
 #title:focus {
   font-family: "Raleway", sans-serif;
   color: rgb(42, 40, 40);
   border-bottom: #1b1f20;
+  font-size: 14px;
 }
 
 #title:focus + label {
@@ -128,11 +133,13 @@ h1:hover {
 #textarea1:valid {
   font-family: "Raleway", sans-serif;
   color: rgba(42, 40, 40, 0.87);
+  font-size: 14px;
 }
 
 #title:valid {
   font-family: "Raleway", sans-serif;
   color: rgba(42, 40, 40, 0.87);
+  font-size: 14px;
 }
 
 /* show Note, list and grid */
@@ -164,6 +171,8 @@ h1:hover {
   );
   backdrop-filter: blur(1rem);
   border-radius: 20px;
+  width: 400px;
+  height: 350px;
 }
 
 .btn-success,
@@ -199,7 +208,6 @@ h1:hover {
   display: none;
 }
 
-
 .container-title-in-show,
 .container-note-in-show {
   word-break: break-all;
@@ -213,16 +221,15 @@ h1:hover {
   width: 100%;
   height: 100px;
   overflow-y: scroll;
-  padding-bottom: 20px;
   border-bottom-style: groove;
-  }
+  padding: 0 !important;
+}
 
 /* SCROLL OF SHOW-CONTAINER */
 
 .container-note-in-show::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  /* display: none; */
 }
 
 .container-note-in-show::-webkit-scrollbar-thumb {
@@ -324,13 +331,14 @@ h1:hover {
   padding: 30px;
   height: 500px;
   border-style: none;
+  margin-top: 50px;
 }
 
 .card-container_note {
   background: linear-gradient(
     to right bottom,
-    rgba(220, 218, 230, 0.822),
-    rgba(72, 72, 80, 0.3)
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
   );
   border-radius: 3px;
   margin-top: 10px;
@@ -345,20 +353,31 @@ h1:hover {
 .card-note {
   margin-bottom: 0px !important;
   padding: 2px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
 }
 .card-note p {
-  margin: 0px !important;
-  color: #ffffff9d !important;
+  font-size: 10px;
+  margin: 0px;
+  color: #2724249d;
 }
 .card-note h6 {
-  font-weight: 600 !important;
-  margin: 0 !important;
+  font-weight: 600;
+  margin: 0;
+  font-size: 14px;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
 
 .date {
   padding-bottom: 5px;
+  color: #2724249d;
+  font-style: normal;
   font-size: 10px;
-  color: #9b9b9b;
+
 }
 
 .green {
@@ -366,21 +385,25 @@ h1:hover {
 }
 
 /* icons options   */
+.container-content_card {
+  padding-right: 0;
+}
 
-.content-card{
+.content-card {
   display: flex;
   justify-content: space-between;
 }
 
-.icons-options{
+.icons-options {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 2px;
   transition-duration: 0.4s;
   opacity: 0;
+  z-index: 10;
 }
 
-.content-card:hover .icons-options{
+.content-card:hover .icons-options {
   opacity: 0.8;
 }
