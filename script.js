@@ -77,7 +77,7 @@ const saveNote = () => {
 };
 const showNotes = () => {
   const show = document.querySelector("#show");
-
+  const flower = document.querySelector("#flower");
   if (!localStorage.length) {
     notes = [];
   } else {
@@ -85,7 +85,8 @@ const showNotes = () => {
     notes = JSON.parse(JSON_NOTE);
   }
   if (!notes.length) {
-    carousel.remove();
+    flower.classList.remove("hidden");
+    // carousel.remove();
   } else {
     notes.forEach((e, i) => {
       carousel.insertAdjacentHTML(
@@ -147,7 +148,7 @@ function cards() {
     const card = document.querySelector(`.card-${i + 1}`);
     card.addEventListener("click", function () {
       show.classList.remove("scale-out");
-      // show.classList.add("show");
+      show.classList.add("show");
       divShow.classList.remove("hidden");
       divShow.classList.add("show-container");
       TITLE_SHOW.innerHTML = e.title;
@@ -295,6 +296,25 @@ document.addEventListener("DOMContentLoaded", function () {
   var instances = M.Sidenav.init(elems);
 });
 
+const typed = new Typed(".typed", {
+  strings: [
+    "<i class='font-animated'>write</i>",
+    "<i class='font-animated'>a new</i>",
+    "<i class='font-animated'>note</i>",
+  ],
+	typeSpeed: 75, // Velocidad en mlisegundos para poner una letra,
+	startDelay: 150, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
+	backSpeed: 75, // Velocidad en milisegundos para borrrar una letra,
+	smartBackspace: true, // Eliminar solamente las palabras que sean nuevas en una cadena de texto.
+	shuffle: false, // Alterar el orden en el que escribe las palabras.
+	backDelay: 1500, // Tiempo de espera despues de que termina de escribir una palabra.
+	loop: true, // Repetir el array de strings
+	loopCount: false, // Cantidad de veces a repetir el array.  false = infinite
+	showCursor: true, // Mostrar cursor palpitanto
+	cursorChar: '🗒', // Caracter para el cursor
+	contentType: 'html', // 'html' o 'null' para texto sin formato
+});
+
 deleteNote.addEventListener("click", deleteOne);
 updateNote.addEventListener("click", updateOne);
 newNote.addEventListener("click", saveNote);
@@ -306,7 +326,7 @@ principalTitle.classList.add("without-first_container");
 
 addNewNote.addEventListener("click", function () {
   iconAdd.innerHTML = "save";
-  btnToPulse.classList.add("pulse", "blue");
+  btnToPulse.classList.add("pulse", "white");
   firstContainer.classList.toggle("scale-out");
   btnToPulse.classList.remove("disabled");
   firstContainer.classList.remove("first-container_fixed");

@@ -14,12 +14,12 @@
 <body>
     <header>
         <nav class="black">
-            <div class=".show-on-medium-and-up nav-wrapper container">
+            <div class="nav-wrapper container">
                 <a href="#" class="sidenav-trigger" data-target="menu-side">
                     <i class="material-icons">menu</i>
                 </a>
                 <a href="#" class="brand-logo right">
-                    🧦
+                     <span class="typed"></span>
                 </a>
             </div>
         </nav>
@@ -38,7 +38,7 @@
                             <span class="name black-text">Hi-Notes</span>
                         </a>
                         <p href="">
-                            <span class="email black-text">Ésta es una pagina sencilla de notas donde el almacenamiento será en tu mismo navegador con ayuda del LocalStorage.</span>
+                            <span class="email black-text">Ésta es una página web sencilla de notas, donde el almacenamiento será en tu mismo navegador con ayuda del localstorage.</span>
                             <span class="email black-text">
                                 Haz click, en el titulo principal para agregar tu primera nota.
                             </span>
@@ -93,6 +93,9 @@
         <div class="container">
             <div class="row card-container container-note-in-show" id="carousel">
                <!-- Aqui van las cards insertadas con javascript  -->
+
+               <!-- show flower when dont have nothing -->
+               <img id="flower" src="flor.gif" alt="" class="hidden responsive-img">
             </div>
         </div>
     </div>
@@ -145,6 +148,17 @@
       <li><a id="reset" class="btn-floating"><i class="material-icons">delete_forever</i></a></li>
     </ul>
   </div>
+  
+  <footer class="page-footer">
+    <div class="footer-copyright .hide-on-small-only">
+      <div class="container center">
+      © 2021 🗒: @ruizjorgee on instagram
+      </div>
+    </div>
+  </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

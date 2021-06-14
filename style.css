@@ -98,6 +98,17 @@ h1:hover {
   margin-right: 8px;
 }
 
+#flower{
+  position: absolute;
+  z-index: -1;
+  width: 600px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 #label-save-notes {
   font-family: "Raleway", sans-serif;
   color: rgb(7, 6, 6);
@@ -406,4 +417,15 @@ h1:hover {
 
 .content-card:hover .icons-options {
   opacity: 0.8;
+}
+
+.page-footer{
+  background: linear-gradient(to right, rgb(197, 219, 233), rgb(168, 188, 201));
+
+  /* background-color: rgb(0, 0, 0) !important; */
+}
+
+.side-nav_container_footer{
+  width: 200px !important; 
+  height: 150px !important;
 }
