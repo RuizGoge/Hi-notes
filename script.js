@@ -18,7 +18,25 @@ const divShow = document.querySelector("#show-container");
 const show = document.querySelector("#show");
 const exitShow = document.querySelector("#exit-show");
 
-// inicializador del sidenav
+// change notes image
+
+function rand(n) {
+  // creamos un numero al azar entre 1 y 10 (o cual sea la cantidad de imágenes)
+  console.log(Math.floor(Math.random() * n + 1));
+
+  return Math.floor(Math.random() * n + 1);
+}
+//guardas imagenes en el array
+const changeImg = [
+  "img0.gif",
+  "img1.gif",
+  "img2.gif",
+  "img3.gif",
+  "img4.gif",
+];
+function change() {
+  document.getElementById("change").src = changeImg[rand(5) - 1];
+}
 
 const dateOfNotes = () => {
   const MONTHS = [
@@ -98,12 +116,12 @@ const showNotes = () => {
           <div class="col s12 container-content_card">
               <div class="content-card">
                   <div class="truncate">
-                      <h6>${e.title}</h6>
-                      <p>${e.note}</p>
+                      <h6 class="truncate">${e.title}</h6>
+                      <p class="truncate">${e.note}</p>
                       <i class="date">${e.date}</i>
                   </div> 
                   <div class="icons-options">
-                      <i id="prueba" class="material-icons tiny">open_in_new</i>
+                      <i class="material-icons tiny">open_in_new</i>
                   </div> 
               </div>
           </div>
@@ -140,30 +158,40 @@ const showNotes = () => {
 
 function cards() {
   const TITLE_SHOW = document.querySelector("#title-in-show-container");
+  const TITLE_SHOW_TWO = document.querySelector("#title-in-show-container_two");
   const NOTE_SHOW = document.querySelector("#note-in-show-container");
   const NUM_NOTE = document.querySelector("#number-note");
+
 
   //Select Card for See note's info.
   notes.forEach((e, i) => {
     const card = document.querySelector(`.card-${i + 1}`);
     card.addEventListener("click", function () {
+      divShow.classList.remove("hidden");
+      setTimeout(() => {
+      divShow.classList.add("show-container");
       show.classList.remove("scale-out");
       show.classList.add("show");
-      divShow.classList.remove("hidden");
-      divShow.classList.add("show-container");
-      TITLE_SHOW.innerHTML = e.title;
+      }, 100);
+      TITLE_SHOW.innerHTML =
+        e.title + '<i class="material-icons right">more_vert</i>';
       NOTE_SHOW.innerHTML = e.note;
-      NUM_NOTE.innerHTML = i + 1;
+      NUM_NOTE.innerHTML = i + 1; //para identificar la posicion en el array
+      TITLE_SHOW_TWO.innerHTML =
+        e.title + '<i class="material-icons right">close</i>';
     });
+
   });
 
-  //Boton exit
+  // Boton exit
   exitShow.addEventListener("click", function () {
     show.classList.add("scale-out");
     setTimeout(() => {
       divShow.classList.add("hidden");
+      divShow.classList.remove("show-container");
     }, 350);
   });
+
 }
 
 function deleteOne() {
@@ -296,27 +324,29 @@ document.addEventListener("DOMContentLoaded", function () {
   var instances = M.Sidenav.init(elems);
 });
 
+// event for Headers, letter effect
+
 const typed = new Typed(".typed", {
   strings: [
     "<i class='font-animated'>write</i>",
     "<i class='font-animated'>a new</i>",
     "<i class='font-animated'>note</i>",
   ],
-	typeSpeed: 75, // Velocidad en mlisegundos para poner una letra,
-	startDelay: 150, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
-	backSpeed: 75, // Velocidad en milisegundos para borrrar una letra,
-	smartBackspace: true, // Eliminar solamente las palabras que sean nuevas en una cadena de texto.
-	shuffle: false, // Alterar el orden en el que escribe las palabras.
-	backDelay: 1500, // Tiempo de espera despues de que termina de escribir una palabra.
-	loop: true, // Repetir el array de strings
-	loopCount: false, // Cantidad de veces a repetir el array.  false = infinite
-	showCursor: true, // Mostrar cursor palpitanto
-	cursorChar: '🗒', // Caracter para el cursor
-	contentType: 'html', // 'html' o 'null' para texto sin formato
+  typeSpeed: 75, // Velocidad en mlisegundos para poner una letra,
+  startDelay: 150, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
+  backSpeed: 75, // Velocidad en milisegundos para borrrar una letra,
+  smartBackspace: true, // Eliminar solamente las palabras que sean nuevas en una cadena de texto.
+  shuffle: false, // Alterar el orden en el que escribe las palabras.
+  backDelay: 1500, // Tiempo de espera despues de que termina de escribir una palabra.
+  loop: true, // Repetir el array de strings
+  loopCount: false, // Cantidad de veces a repetir el array.  false = infinite
+  showCursor: true, // Mostrar cursor palpitanto
+  cursorChar: "🗒", // Caracter para el cursor
+  contentType: "html", // 'html' o 'null' para texto sin formato
 });
 
-deleteNote.addEventListener("click", deleteOne);
-updateNote.addEventListener("click", updateOne);
+// deleteNote.addEventListener("click", deleteOne);
+// updateNote.addEventListener("click", updateOne);
 newNote.addEventListener("click", saveNote);
 showNotes();
 cards();
@@ -343,3 +373,6 @@ addNewNote.addEventListener("click", function () {
     }
   }
 });
+
+change();
+

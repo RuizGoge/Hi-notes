@@ -108,6 +108,10 @@ h1:hover {
   bottom: 0;
   margin: auto;
 }
+/* #flower-in-card{
+  width: 400px;
+  margin: auto;
+} */
 
 #label-save-notes {
   font-family: "Raleway", sans-serif;
@@ -174,17 +178,6 @@ h1:hover {
   transition-delay: 0.3s;
 }
 
-.show {
-  background: linear-gradient(
-    to right bottom,
-    rgba(69, 54, 155, 0.658),
-    rgba(30, 44, 170, 0.329)
-  );
-  backdrop-filter: blur(1rem);
-  border-radius: 20px;
-  width: 400px;
-  height: 350px;
-}
 
 .btn-success,
 .btn-danger {
@@ -195,24 +188,6 @@ h1:hover {
 .swal2-actions {
   display: flex;
   justify-content: space-evenly !important;
-}
-
-#exit-show {
-  width: 20px;
-  height: 25px;
-  border: 0;
-  color: #b9acb9;
-  cursor: pointer;
-  font-family: "Raleway", sans-serif;
-  font-weight: bolder;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-#exit-show:hover {
-  color: #f8f0f8e3;
 }
 
 #number-note {

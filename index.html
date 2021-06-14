@@ -32,7 +32,7 @@
                             <img src="fondo.png" alt="">
                         </div>
                         <a>
-                            <img src="flor.gif" alt="" class="circle side-nav_container cencer">
+                            <img src="img0.gif" alt="" class="circle side-nav_container cencer">
                         </a>
                         <a href="#">
                             <span class="name black-text">Hi-Notes</span>
@@ -89,45 +89,42 @@
             </div>
         </section>
     </main>
+    
     <div class="section section-container">
         <div class="container">
             <div class="row card-container container-note-in-show" id="carousel">
                <!-- Aqui van las cards insertadas con javascript  -->
 
                <!-- show flower when dont have nothing -->
-               <img id="flower" src="flor.gif" alt="" class="hidden responsive-img">
+               <img id="flower" src="img0.gif" alt="" class="hidden responsive-img">
             </div>
         </div>
     </div>
+
+
+
     <div id="show-container" class="hidden">
-        <div id="show" class="scale-transition">
-            <div id="exit-show" class="btn transparent z-depth-0"><i class="material-icons">fullscreen_exit</i></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col s12">
-                        <div class="center container-title-in-show">
-                            <h3 id="title-in-show-container" class="title-in-show-container indigo-text text-lighten-3"></h3>
-                            <p id="number-note"></p>
-                        </div>
-                    </div>
-                    <div class="col s12">
-                        <div class="center container-note-in-show">
-                            <h2 id="note-in-show-container" class="note-in-show-container indigo-text text-lighten-5 flow-text"></h2>
-                            <textarea maxlength="880" id="textarea-update" class="hidden textarea-update materialize-textarea indigo-text text-lighten-5 flow-text"></textarea>
-                        </div>
-                    </div>
-                    <div class="col s12 center">
-                        <div class="section">
-                            <div class="row container-btn-in-show">
-                                <div class="col s12 m6 l6">
-                                    <div id="update" class="btn indigo lighten-3 waves-effect waves-yellow">Update</div>
-                                </div>
-                                <div class="col s12 m6 l6">
-                                    <div id="delete" class="delete btn indigo lighten-3 waves-effect waves-yellow">Delete</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div id="show" class="row scale-transition">
+            <div class="col l8 offset-l2 s10 offset-s1">
+                <i id="exit-show" class="material-icons">close</i>
+                <div class="card">
+                    <div id="flower-in-card" class="card-image waves-effect waves-block waves-light">
+                        <img id="change" class="activator responsive-img" src="img2.gif" >
+                      </div>
+                      <div class="card-content">
+                        <span id="title-in-show-container" class="card-title activator grey-text text-darken-4">
+                            <i class="material-icons right">more_vert</i>
+                          </span>
+                          <p id="number-note"></p>
+                      </div>
+                      <div class="card-reveal">
+                        <span id="title-in-show-container_two" class="card-title grey-text text-darken-4">
+                            <i class="material-icons right">close</i>
+                          </span>
+                          <p id="note-in-show-container">
+                           <!-- aqui se imprime la nota -->
+                          </p>
+                      </div>
                 </div>
             </div>
         </div>
@@ -148,6 +145,39 @@
       <li><a id="reset" class="btn-floating"><i class="material-icons">delete_forever</i></a></li>
     </ul>
   </div>
+
+  
+  <!-- <div id="show" class="row">
+    <div class="col l4 offset-l4 s10 offset-s1">
+        <i id="exit-show" class="material-icons">close</i>
+        <div class="card">
+            <div id="flower-in-card" class="card-image waves-effect waves-block waves-light">
+                <img id="change" class="activator responsive-img" src="img2.gif" >
+              </div>
+              <div class="card-content">
+                <span id="title-in-show-container" class="card-title activator grey-text text-darken-4">
+                    Prueba queloque manaure
+                    <i class="material-icons right">more_vert</i>
+                  </span>
+                  <p id="number-note"></p>
+              </div>
+              <div class="card-reveal">
+                <span id="title-in-show-container_two" class="card-title grey-text text-darken-4">
+                    Prueba queloque manaure
+                    <i class="material-icons right">close</i>
+                  </span>
+                  <p id="note-in-show-container">
+                    Prueba queloque manaure Prueba queloque manaure Prueba queloque manaure
+                    Prueba queloque manaure
+                    Prueba queloque manaure
+                    Prueba queloque manaurePrueba queloque manaurePrueba queloque manaurePrueba queloque manaure -->
+                   <!-- aqui se imprime la nota -->
+                  <!-- </p>
+              </div>
+        </div>
+    </div>
+</div> -->
+  
   
   <footer class="page-footer">
     <div class="footer-copyright .hide-on-small-only">
