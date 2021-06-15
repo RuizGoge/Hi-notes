@@ -105,7 +105,7 @@
 
     <div id="show-container" class="hidden">
         <div id="show" class="row scale-transition">
-            <div class="col l8 offset-l2 s10 offset-s1">
+            <div class="col l6 offset-l3 m6 offset-m3 s10 offset-s1">
                 <i id="exit-show" class="material-icons">close</i>
                 <div class="card">
                     <div id="flower-in-card" class="card-image waves-effect waves-block waves-light">
@@ -113,17 +113,35 @@
                       </div>
                       <div class="card-content">
                         <span id="title-in-show-container" class="card-title activator grey-text text-darken-4">
+                            <!-- aqui va el titulo de la nota -->
                             <i class="material-icons right">more_vert</i>
                           </span>
                           <p id="number-note"></p>
+                          <p id="second-title"></p>
                       </div>
                       <div class="card-reveal">
                         <span id="title-in-show-container_two" class="card-title grey-text text-darken-4">
+                            <!-- aqui va el titulo de la nota -->
                             <i class="material-icons right">close</i>
                           </span>
-                          <p id="note-in-show-container">
-                           <!-- aqui se imprime la nota -->
-                          </p>
+                          <div class="row container-note_card ">
+                            <div class="col s12">
+                                <p id="note-in-show-container">
+                                 <!-- aqui se imprime la nota -->
+                                </p>
+                                <textarea maxlength="880" id="textarea-update" class="hidden textarea-update flow-text"></textarea>
+                            </div>
+                          </div>
+                          <div class="row center">
+                            <div class="col s12 container-buttons">
+                                <div class="col s6">
+                                    <div id="update" class="btn-floating black"><i class="material-icons">edit</i></div>
+                                </div>
+                                <div class="col s6">
+                                    <div id="delete" class="btn-floating white black-text"><i class="material-icons">delete</i></div>
+                                </div>
+                            </div>
+                        </div>
                       </div>
                 </div>
             </div>
@@ -135,7 +153,7 @@
 <!-- fixed buttos -->
 
 <div class="fixed-action-btn btn-fixed">
-    <a id="btn-to-pulse" class="btn-floating btn-large">
+    <a id="btn-to-pulse" class="btn-floating btn-large white">
       <i id="save" class="large material-icons icon-add">add</i>
     </a>
     <ul>
@@ -146,39 +164,6 @@
     </ul>
   </div>
 
-  
-  <!-- <div id="show" class="row">
-    <div class="col l4 offset-l4 s10 offset-s1">
-        <i id="exit-show" class="material-icons">close</i>
-        <div class="card">
-            <div id="flower-in-card" class="card-image waves-effect waves-block waves-light">
-                <img id="change" class="activator responsive-img" src="img2.gif" >
-              </div>
-              <div class="card-content">
-                <span id="title-in-show-container" class="card-title activator grey-text text-darken-4">
-                    Prueba queloque manaure
-                    <i class="material-icons right">more_vert</i>
-                  </span>
-                  <p id="number-note"></p>
-              </div>
-              <div class="card-reveal">
-                <span id="title-in-show-container_two" class="card-title grey-text text-darken-4">
-                    Prueba queloque manaure
-                    <i class="material-icons right">close</i>
-                  </span>
-                  <p id="note-in-show-container">
-                    Prueba queloque manaure Prueba queloque manaure Prueba queloque manaure
-                    Prueba queloque manaure
-                    Prueba queloque manaure
-                    Prueba queloque manaurePrueba queloque manaurePrueba queloque manaurePrueba queloque manaure -->
-                   <!-- aqui se imprime la nota -->
-                  <!-- </p>
-              </div>
-        </div>
-    </div>
-</div> -->
-  
-  
   <footer class="page-footer">
     <div class="footer-copyright .hide-on-small-only">
       <div class="container center">

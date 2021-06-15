@@ -9,6 +9,7 @@ const iconAdd = document.querySelector(".icon-add");
 const addNewNote = document.querySelector("#add-note");
 const principalTitle = document.querySelector(".principal_title");
 const btnToPulse = document.querySelector("#btn-to-pulse");
+const NUM_NOTE = document.querySelector("#number-note");
 
 let resultDate;
 let notes = [];
@@ -19,21 +20,14 @@ const show = document.querySelector("#show");
 const exitShow = document.querySelector("#exit-show");
 
 // change notes image
+//guardas imagenes en el array
+
+const changeImg = ["img0.gif", "img1.gif", "img2.gif", "img3.gif", "img4.gif"];
 
 function rand(n) {
-  // creamos un numero al azar entre 1 y 10 (o cual sea la cantidad de imágenes)
-  console.log(Math.floor(Math.random() * n + 1));
-
   return Math.floor(Math.random() * n + 1);
 }
-//guardas imagenes en el array
-const changeImg = [
-  "img0.gif",
-  "img1.gif",
-  "img2.gif",
-  "img3.gif",
-  "img4.gif",
-];
+
 function change() {
   document.getElementById("change").src = changeImg[rand(5) - 1];
 }
@@ -70,12 +64,12 @@ const save = (array) => {
 const saveNote = () => {
   const TITLE_NOTE = document.getElementById("title").value;
   const NOTE = document.getElementById("textarea1").value;
+  
   if (!(TITLE_NOTE && NOTE)) {
     if (firstContainer.classList.contains("first-container_fixed")) {
-      M.toast({ html: "Click in Hi-Notes!", classes: "rounded" });
     } else {
       M.toast({ html: "Write in the two fields", classes: "rounded" });
-      btnToPulse.classList.remove("blue");
+      btnToPulse.classList.remove("white");
       btnToPulse.classList.add("red");
     }
   } else {
@@ -94,6 +88,7 @@ const saveNote = () => {
   }
 };
 const showNotes = () => {
+  
   const show = document.querySelector("#show");
   const flower = document.querySelector("#flower");
   if (!localStorage.length) {
@@ -159,9 +154,8 @@ const showNotes = () => {
 function cards() {
   const TITLE_SHOW = document.querySelector("#title-in-show-container");
   const TITLE_SHOW_TWO = document.querySelector("#title-in-show-container_two");
+const SECOND_TITLE = document.querySelector('#second-title');
   const NOTE_SHOW = document.querySelector("#note-in-show-container");
-  const NUM_NOTE = document.querySelector("#number-note");
-
 
   //Select Card for See note's info.
   notes.forEach((e, i) => {
@@ -169,18 +163,18 @@ function cards() {
     card.addEventListener("click", function () {
       divShow.classList.remove("hidden");
       setTimeout(() => {
-      divShow.classList.add("show-container");
-      show.classList.remove("scale-out");
-      show.classList.add("show");
+        divShow.classList.add("show-container");
+        show.classList.remove("scale-out");
+        show.classList.add("show");
       }, 100);
       TITLE_SHOW.innerHTML =
         e.title + '<i class="material-icons right">more_vert</i>';
       NOTE_SHOW.innerHTML = e.note;
       NUM_NOTE.innerHTML = i + 1; //para identificar la posicion en el array
+      SECOND_TITLE.innerHTML = e.title;
       TITLE_SHOW_TWO.innerHTML =
         e.title + '<i class="material-icons right">close</i>';
     });
-
   });
 
   // Boton exit
@@ -191,7 +185,6 @@ function cards() {
       divShow.classList.remove("show-container");
     }, 350);
   });
-
 }
 
 function deleteOne() {
@@ -209,7 +202,7 @@ function deleteOne() {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "Ujum!",
+      confirmButtonText: "Ujum! 😌",
       cancelButtonText: "No",
       reverseButtons: true,
     })
@@ -241,18 +234,21 @@ function deleteOne() {
 }
 
 function updateOne() {
+  M.toast({ html: "You can edit it now! 😊", classes: "rounded" });
+
   const NUM_NOTE = document.querySelector("#number-note").innerHTML;
   const TITLE_NOTE = document.querySelector(
-    "#title-in-show-container"
+    "#second-title"
   ).innerHTML;
-  document.querySelector("#update").innerHTML =
-    '<a class="btn transparent z-depth-0 save-note white-text">SAVE</a>';
+  updateNote.innerHTML = '<i class="material-icons save-note">save</i>';
+  updateNote.classList.add("pulse");
   const NOTE = document.querySelector("#note-in-show-container");
   const textOfNote = NOTE.innerHTML;
   const textArea = document.querySelector("#textarea-update");
 
   NOTE.classList.add("hidden");
   textArea.classList.remove("hidden");
+  textArea.classList.add("z-depth-1","hoverable");
   textArea.innerHTML = textOfNote;
 
   document.querySelector(".save-note").addEventListener("click", function () {
@@ -291,7 +287,7 @@ resetButton.addEventListener("click", () => {
     M.toast({ html: "The storage is empty", classes: "rounded" });
   } else {
     Swal.fire({
-      title: "Are you sure?",
+      title: "Are you sure? 🤔",
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
@@ -345,8 +341,8 @@ const typed = new Typed(".typed", {
   contentType: "html", // 'html' o 'null' para texto sin formato
 });
 
-// deleteNote.addEventListener("click", deleteOne);
-// updateNote.addEventListener("click", updateOne);
+deleteNote.addEventListener("click", deleteOne);
+updateNote.addEventListener("click", updateOne);
 newNote.addEventListener("click", saveNote);
 showNotes();
 cards();
@@ -375,4 +371,3 @@ addNewNote.addEventListener("click", function () {
 });
 
 change();
-

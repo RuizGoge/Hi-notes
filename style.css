@@ -9,9 +9,17 @@ body {
   /* background-image: url("/images/montana3.jpg"); */
   background: #8e2de2;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, rgba(212,227,236), rgb(161, 210, 240));
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(212, 227, 236),
+    rgb(161, 210, 240)
+  );
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, rgba(212,227,236), rgba(212,227,236));
+  background: linear-gradient(
+    to right,
+    rgba(212, 227, 236),
+    rgba(212, 227, 236)
+  );
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,8 +52,8 @@ body {
   bottom: 10%;
 }
 
-.side-nav_container{
-  width: 250px !important; 
+.side-nav_container {
+  width: 250px !important;
   height: 200px !important;
 }
 
@@ -98,7 +106,7 @@ h1:hover {
   margin-right: 8px;
 }
 
-#flower{
+#flower {
   position: absolute;
   z-index: -1;
   width: 600px;
@@ -178,7 +186,6 @@ h1:hover {
   transition-delay: 0.3s;
 }
 
-
 .btn-success,
 .btn-danger {
   background-color: slateblue !important;
@@ -191,6 +198,9 @@ h1:hover {
 }
 
 #number-note {
+  display: none;
+}
+#second-title {
   display: none;
 }
 
@@ -254,14 +264,65 @@ h1:hover {
 
 /* UPDATE AND HIDDEN CARDS */
 
+#exit-show{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 4;
+  opacity: 0;
+}
+
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.card{
+  z-index: 5;
+}
+
+.container-note_card{
+  height: 70%;
+  margin-bottom: 0 !important;
+}
+
+.card-reveal{
+  margin-bottom: 0 !important;
+  overflow: hidden !important;
 }
 
 .textarea-update {
-  height: 200px !important;
-  font-size: 20px !important;
-  font-weight: 400 !important;
+  padding: 0 !important;
+  height: 150px !important;
+  font-size: 14px !important;
+  line-height: 1.5;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 14.5px !important;
+  border: none !important;
+  outline: none;
+  resize: none;
+  }
+
+  #note-in-show-container{
+    word-wrap: break-word;
+  }
+
+  .textarea-update:focus {
+    outline: none !important;
+  }
+  
+
+
+.container-buttons{
+  display: flex;
+  justify-content: space-between;
 }
 
 /* button play */
@@ -309,6 +370,8 @@ h1:hover {
   ) !important;
   font-size: 10px !important;
 }
+
+
 
 /* tarjeticas */
 
@@ -363,7 +426,6 @@ h1:hover {
   color: #2724249d;
   font-style: normal;
   font-size: 10px;
-
 }
 
 .green {
@@ -394,13 +456,13 @@ h1:hover {
   opacity: 0.8;
 }
 
-.page-footer{
+.page-footer {
   background: linear-gradient(to right, rgb(197, 219, 233), rgb(168, 188, 201));
 
   /* background-color: rgb(0, 0, 0) !important; */
 }
 
-.side-nav_container_footer{
-  width: 200px !important; 
+.side-nav_container_footer {
+  width: 200px !important;
   height: 150px !important;
 }
