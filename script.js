@@ -129,7 +129,7 @@ const showNotes = () => {
       toggleList.addEventListener("click", function () {
         listContainer.classList.toggle("s10");
         listContainer.classList.toggle("s3");
-        iconGrid.innerHTML = "view_module";
+        iconGrid.innerHTML = "view_headline";
         if (
           !(
             listContainer.classList.contains("s10") ||
@@ -139,7 +139,7 @@ const showNotes = () => {
           listContainer.classList.add("grid_mode");
         } else {
           listContainer.classList.remove("grid_mode");
-          iconGrid.innerHTML = "view_headline";
+        iconGrid.innerHTML = "view_module";
         }
       });
     });
