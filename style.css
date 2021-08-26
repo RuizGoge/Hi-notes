@@ -264,7 +264,7 @@ h1:hover {
 
 /* UPDATE AND HIDDEN CARDS */
 
-#exit-show{
+#exit-show {
   position: absolute;
   top: 0;
   right: 0;
@@ -278,16 +278,16 @@ h1:hover {
   display: none !important;
 }
 
-.card{
+.card {
   z-index: 5;
 }
 
-.container-note_card{
+.container-note_card {
   height: 70%;
   margin-bottom: 0 !important;
 }
 
-.card-reveal{
+.card-reveal {
   margin-bottom: 0 !important;
   overflow: hidden !important;
 }
@@ -308,19 +308,17 @@ h1:hover {
   border: none !important;
   outline: none;
   resize: none;
-  }
+}
 
-  #note-in-show-container{
-    word-wrap: break-word;
-  }
+#note-in-show-container {
+  word-wrap: break-word;
+}
 
-  .textarea-update:focus {
-    outline: none !important;
-  }
-  
+.textarea-update:focus {
+  outline: none !important;
+}
 
-
-.container-buttons{
+.container-buttons {
   display: flex;
   justify-content: space-between;
 }
@@ -370,8 +368,6 @@ h1:hover {
   ) !important;
   font-size: 10px !important;
 }
-
-
 
 /* tarjeticas */
 
