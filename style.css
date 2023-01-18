@@ -219,6 +219,7 @@ h1:hover {
   overflow-y: scroll;
   border-bottom-style: groove;
   padding: 0 !important;
+  display: inline-table
 }
 
 /* SCROLL OF SHOW-CONTAINER */
